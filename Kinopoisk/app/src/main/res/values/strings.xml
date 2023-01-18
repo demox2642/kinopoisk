@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Kinopoisk</string>
+    <string name="search">Search</string>
+    <string name="all">All</string>
+    <string name="movie">Movie</string>
+    <string name="series">Series</string>
+    <string name="cartoon">Cartoon</string>
+    <string name="year">Year</string>
+    <string name="movie_type">movie type:</string>
+    <string name="movie_id">movie id:</string>
+    <string name="rating">Rating:</string>
+    <string name="votes">Votes :</string>
+</resources>

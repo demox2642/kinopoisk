@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id  'androidx.navigation.safeargs.kotlin'
+    id("kotlin-kapt")
+}
+
+android {
+    namespace 'com.demox.kinopoisk'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.demox.kinopoisk"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+//implementation(project(path:':presentation:main'))
+    implementation(project(path:':data:main'))
+    implementation(project(path:':domain:main'))
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    //navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
+    //DI
+    implementation("io.insert-koin:koin-core:${Versions.koin}")
+    implementation("io.insert-koin:koin-android:${Versions.koin}")
+    //binding
+    implementation(  "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${Versions.viewBinding}")
+    //Room
+    implementation("androidx.room:room-runtime:${Versions.room}")
+            kapt( "androidx.room:room-ktx:${Versions.room}")
+    //paging
+    implementation("androidx.paging:paging-runtime:${Versions.paging}")
+    //coil
+    implementation( "io.coil-kt:coil:${Versions.coil}")
+
+}
